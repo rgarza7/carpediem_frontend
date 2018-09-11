@@ -18,7 +18,7 @@
     <td>
       <table cellspacing='0' cellpadding='0' align=center  border='1' width='900'>
         <td  align=center bgcolor='#41cdf4'>  
-          <button id = "back">«</button>
+          <button id = "calendar_back">«</button>
         </td>
         <td colspan=5 align=center bgcolor='#42e8f4'>
           <font size='3'>
@@ -26,7 +26,7 @@
             <h2 id = "calendar_year">YEAR</h2>
         </td>
         <td  align=center bgcolor='#41cdf4'> 
-          <button id = "forward">»</button>
+          <button id = "calendar_forward">»</button>
         </td>
   </tr>
 
@@ -202,7 +202,7 @@
 </table>
 
 <div align=center>
-  <h2><button id = "today_button">today</button> <button id = "this_week_button">this week</button><button id = "top_priority_button">top priority</button></h2>
+  <h2><button id = "calendar_today_button">today</button> <button id = "calendar_week_button">this week</button><button id = "calendar_priority_button">top priority</button></h2>
   </div>
 
 <!-- Day Table -->
@@ -211,15 +211,15 @@
     <td>
       <table cellspacing='0' cellpadding='0' align=center  border='1' width='500'>
         <td  align=center bgcolor='#41cdf4'>  
-          <button>«</button>
+          <button id = "day_table_back">«</button>
         </td>
         <td colspan=3 align=center bgcolor='#42e8f4'>
           <font size='3'>
-            <h2 id = "event_day">DAY</h2>
-            <h2 id = "event_month">MONTH</h2>
+            <h2 id = "day_table_day">DAY</h2>
+            <h2 id = "day_table_month">MONTH</h2>
         </td>
         <td  align=center bgcolor='#41cdf4'> 
-          <button>»</button>
+          <button id ="day_table_forward">»</button>
         </td>
    </tr>
    <form action="submit">
@@ -239,14 +239,14 @@
     </td>
     </form>
     </tr>
-    <tr><td align=center colspan=5><button>create new event</button></td></tr>
+    <tr><td align=center colspan=5><button id = "day_table_new_event_button">create new event</button></td></tr>
     <tr>
   <tr>
-      <td align=center><h2>Time</h2></td>
-          <td align=center><h2>Event</h2></td>
+      <td align=center><h2 id = "day_table_time">Time</h2></td>
+          <td align=center><h2 id = "day_table_event">Event</h2></td>
 
-          <td align=center colspan=2><h2>Description</h2></td>
-          <td align=center><h2>priority</h2></td>
+          <td align=center colspan=2><h2 id = "day_table_description">Description</h2></td>
+          <td align=center><h2 id = "day_table_priority">priority</h2></td>
         </tr>
 
 
@@ -263,14 +263,14 @@
       <td>
         <table cellspacing='0' cellpadding='0' align=center  border='1' width='500'>
           <td  align=center bgcolor='#41cdf4'>  
-            <button>«</button>
+            <button id = "event_table_back">«</button>
           </td>
           <td colspan=3 align=center bgcolor='#42e8f4'>
             <font size='3'>
-              <h2>Event</h2>
+              <h2 id = "event_table_event">Event</h2>
           </td>
           <td  align=center bgcolor='#41cdf4'> 
-            <button>»</button>
+            <button id = "event_table_forward">»</button>
           </td>
      </tr>
      <form action="submit">
@@ -290,20 +290,19 @@
       </td>
       </form>
       </tr>
-      <tr><td align=center colspan=5><button>submit changes</button></td></tr>
+      <tr><td align=center colspan=5><button id = "event_table_submit_button">submit changes</button></td></tr>
       <tr>
     <tr>
-        <td align=center><h2>From Time</h2><h2>To Time</h2></td>
-            
-            
-            <td align=center colspan=3><h2>Description</h2></td>
-            <td align=center><h2>priority</h2></td>
+        <td align=center><h2 id = "event_table_from_time">From Time</h2>
+                         <h2 id = "event_table_to_time">To Time</h2></td>
+
+
+            <td align=center colspan=3><h2 id = "event_table_description">Description</h2></td>
+            <td align=center><h2 id = "event_table_priority">priority</h2></td>
           </tr>
-          <tr><td align=center colspan=5><button>move</button><button>delete</button></td></tr>
-          
+          <tr><td align=center colspan=5><button id = "event_table_move">move</button><button id = "event_table_delete">delete</button></td></tr>
+
         </table>
       </td>
     </tr>
   </table>
-  
-
