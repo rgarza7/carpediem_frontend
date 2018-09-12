@@ -4,33 +4,52 @@
     <meta charset="utf-8">
     <title>CarpeDiem</title>
     <script src="src/index.js" charset="utf-8"></script>
-  </head>
-    <ul id="events">
-    </ul>
-  </head>
-  <body>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-  </body>
-</html>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<table border='1'  bordercolor='red' cellspacing='0' cellpadding='0' align=center >
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body class="main">
+  <!-- start nav bar -->
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo">CarpeDiem</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"><i class="material-icons">search</i></a></li>
+        <li><a href="#"><i class="material-icons">view_module</i></a></li>
+        <li><a href="#"><i class="material-icons">account_box</i></a></li>
+        <li><a href="#"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- end nav bar -->
+<div class="container">
+<table border=1 cellspacing='0' cellpadding='0' align=center>
   <tr>
     <td>
-      <table cellspacing='0' cellpadding='0' align=center  border='1' width='900'>
-        <td  align=center bgcolor='#41cdf4'>  
-          <button id = "calendar_back">«</button>
+      <table class="table1 striped" cellspacing='0' cellpadding='0' align=center  border='1'>
+        <td class="blue center-align">  
+          <i id="calendar_left" class="material-icons large white-text waves-effect waves-light">chevron_left</i>
         </td>
-        <td colspan=5 align=center bgcolor='#42e8f4'>
+        <td colspan=5 class="blue white-text" >
           <font size='3'>
-            <h2 id = "calendar_month">MONTH</h2>
-            <h2 id = "calendar_year">YEAR</h2>
+            <h1 id = "calendar_month" class="center-align">MONTH</h1>
+            <h3 id = "calendar_year" class="center-align">YEAR</h3>
         </td>
-        <td  align=center bgcolor='#41cdf4'> 
-          <button id = "calendar_forward">»</button>
+        <td class="blue center-align"> 
+          <i id="calendar_right" class="material-icons large white-text waves-effect waves-light">chevron_right</i>
         </td>
   </tr>
 
-      <tr>
+      <tr class="blue lighten-4">
         <td>
           <font size='3'>
             <b>Sun</b>
@@ -68,7 +87,7 @@
         </td>
       </tr>
       <tr>
-        <td valign=top id = "first_sunday">
+        <td valign=top id="first_sunday">
           <font size='50'> <br></font>
         </td>
         <td valign=top id = "first_monday"> 
@@ -86,7 +105,7 @@
         <td valign=top id = "first_friday"> 
           <font size='50'> <br></font>
         </td>
-        <td valign=top id = "first_saturday" bgcolor='#f4a041'>
+        <td valign=top id = "first_saturday" class="blue lighten-5">
           <font size='50'>1 <br></font>
         </td>
       </tr><tr>
@@ -202,24 +221,29 @@
 </table>
 
 <div align=center>
-  <h2><button id = "calendar_today_button">today</button> <button id = "calendar_week_button">this week</button><button id = "calendar_priority_button">top priority</button></h2>
+  <a href="#" class="waves-effect waves-light btn blue" id = "calendar_today_button">today</a>
+  <a href="#" class="waves-effect waves-light btn blue" id = "calendar_week_button">this week</a>
+  <a href="#" class="waves-effect waves-light btn blue" id = "calendar_priority_button">top priority</a>
   </div>
+</div>
+
 
 <!-- Day Table -->
+<div class="container">
 <table border='5'  bordercolor='red' cellspacing='3' cellpadding='0' align=center >
   <tr>
     <td>
       <table cellspacing='0' cellpadding='0' align=center  border='1' width='500'>
-        <td  align=center bgcolor='#41cdf4'>  
-          <button id = "day_table_back">«</button>
+        <td class="blue center-align">  
+          <i id="day_table_back" class="material-icons medium white-text waves-effect waves-light">chevron_left</i>
         </td>
-        <td colspan=3 align=center bgcolor='#42e8f4'>
+        <td colspan=3 align=center class="blue white-text">
           <font size='3'>
-            <h2 id = "day_table_day">DAY</h2>
-            <h2 id = "day_table_month">MONTH</h2>
+            <h2 id = "day_table_day" class="center-align">DAY</h2>
+            <h2 id = "day_table_month" class="center-align">MONTH</h2>
         </td>
-        <td  align=center bgcolor='#41cdf4'> 
-          <button id ="day_table_forward">»</button>
+        <td class="blue center-align"> 
+          <i id="day_table_forward" class="material-icons medium white-text waves-effect waves-light">chevron_right</i>
         </td>
    </tr>
    <form action="submit">
@@ -239,14 +263,15 @@
     </td>
     </form>
     </tr>
-    <tr><td align=center colspan=5><button id = "day_table_new_event_button">create new event</button></td></tr>
+    <tr><td align=center colspan=5>
+      <a href="#" class="waves-effect waves-light btn blue" id = "day_table_new_event_button">create new event</a></td></tr>
     <tr>
   <tr>
       <td align=center><h2 id = "day_table_time">Time</h2></td>
           <td align=center><h2 id = "day_table_event">Event</h2></td>
 
           <td align=center colspan=2><h2 id = "day_table_description">Description</h2></td>
-          <td align=center><h2 id = "day_table_priority">priority</h2></td>
+          <td align=center><h2 id = "day_table_priority">Priority</h2></td>
         </tr>
 
 
@@ -254,23 +279,24 @@
     </td>
   </tr>
 </table>
-
+</div>
 <br>
 <br>
 <!-- Event Table  -->
+<div class="container">
 <table border='5'  bordercolor='red' cellspacing='3' cellpadding='0' align=center >
     <tr>
       <td>
-        <table cellspacing='0' cellpadding='0' align=center  border='1' width='500'>
-          <td  align=center bgcolor='#41cdf4'>  
-            <button id = "event_table_back">«</button>
+        <table cellspacing='0' cellpadding='0' align=center  border='1' width='500' >
+          <td class="blue center-align">  
+            <i id="event_table_back" class="material-icons medium white-text waves-effect waves-light">chevron_left</i>
           </td>
-          <td colspan=3 align=center bgcolor='#42e8f4'>
+          <td colspan=3 align=center class="blue white-text center-align">
             <font size='3'>
-              <h2 id = "event_table_event">Event</h2>
+              <h2 id="event_table_event">Event</h2>
           </td>
-          <td  align=center bgcolor='#41cdf4'> 
-            <button id = "event_table_forward">»</button>
+          <td class="blue center-align"> 
+            <i id="event_table_forward" class="material-icons medium white-text waves-effect waves-light">chevron_right</i>
           </td>
      </tr>
      <form action="submit">
@@ -290,7 +316,8 @@
       </td>
       </form>
       </tr>
-      <tr><td align=center colspan=5><button id = "event_table_submit_button">submit changes</button></td></tr>
+      <tr><td align=center colspan=5>
+        <a href="#" class="waves-effect waves-light btn blue" id="event_table_submit_button">submit changes</a></td></tr>
       <tr>
     <tr>
         <td align=center><h2 id = "event_table_from_time">From Time</h2>
@@ -298,11 +325,17 @@
 
 
             <td align=center colspan=3><h2 id = "event_table_description">Description</h2></td>
-            <td align=center><h2 id = "event_table_priority">priority</h2></td>
+            <td align=center><h2 id = "event_table_priority">Priority</h2></td>
           </tr>
-          <tr><td align=center colspan=5><button id = "event_table_move">move</button><button id = "event_table_delete">delete</button></td></tr>
+          <tr><td align=center colspan=5>
+            <a href="#" class="waves-effect waves-light btn blue" id="event_table_move">move</a>
+            <a href="#" class="waves-effect waves-light btn blue" id="event_table_delete">delete</a>
+          </td></tr>
 
         </table>
       </td>
     </tr>
   </table>
+</div>
+</body>
+</html>
