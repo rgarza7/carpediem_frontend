@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>CarpeDiem</title>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css"/>
+<!-- Include JS File Here -->
+<script src="src/login.js"></script>
+</head>
+<body>
+  <!-- start nav bar -->
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo">CarpeDiem</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"><i class="material-icons">search</i></a></li>
+        <li><a href="#"><i class="material-icons">view_module</i></a></li>
+        <li><a href="#"><i class="material-icons">account_box</i></a></li>
+        <li><a href="#"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- end nav bar -->
+
+<div class="form">
+        <div id="login">
+          <h1>Welcome Back!</h1>
+
+          <form onsubmit="validate()" action="/" method="post">
+
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="text" id="email" required autocomplete="off"/>
+          </div>
+
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+          <button class="btn-large blue waves-effect waves-light" type="submit" name="action" >Login</button>
+
+
+          <h4>Don't have an account? <a href="signup.html" >Sign up</a></h4>
+
+          </form>
+
+        </div>
+
+      </div><!-- tab-content -->
+
+</div> <!-- /form -->
+</body>
+</html>
