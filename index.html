@@ -19,7 +19,7 @@
   <body class="main">
   <!-- start nav bar -->
   <nav>
-    <div class="nav-wrapper blue">
+    <div class="nav-wrapper blue" id="nav-bar">
       <a href="#!" class="brand-logo">CarpeDiem</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#"><i class="material-icons">search</i></a></li>
@@ -31,7 +31,9 @@
   </nav>
 
   <!-- end nav bar -->
-<div class="container">
+
+  <!-- calendar -->
+<div class="container" id="calendar-table">
 <table border=1 cellspacing='0' cellpadding='0' align=center>
   <tr>
     <td>
@@ -86,7 +88,12 @@
           </font>
         </td>
       </tr>
-      <tr>
+
+
+       <!--numbered days sections -->
+<table data-id=1>
+      
+      <tr data-name="week-one">
         <td valign=top id="first_sunday">
           <font size='50'> <br></font>
         </td>
@@ -106,115 +113,125 @@
           <font size='50'> <br></font>
         </td>
         <td valign=top id = "first_saturday" class="blue lighten-5">
-          <font size='50'>1 <br></font>
+          <font size='50'> <br></font>
         </td>
-      </tr><tr>
+      </tr>
+      <tr data-name="week-two">
         <td valign=top id = "second_sunday">
-          <font size='50'>2 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "second_monday">
-          <font size='50'>3 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "second_tuesday">
-          <font size='50'>4 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "second_wednesday">
-          <font size='50'>5 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "second_thursday">
-          <font size='50'>6 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "second_friday">
-          <font size='50'>7 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "second_saturday">
-          <font size='50'>8 <br></font>
+          <font size='50'> <br></font>
         </td>
       </tr>
-      <tr>
+      <tr data-name="week-three">
         <td valign=top id = "third_sunday">
-          <font size='50'>9<br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "third_monday">
-          <font size='50'>10 <br></font>
+          <font size='50'> <br></font>
         </td>
       <td valign=top id = "third_tuesday">
-        <font size='50'>11 <br></font>
+        <font size='50'> <br></font>
         </td>
       <td valign=top id = "third_wednesday">
-        <font size='50'>12 <br></font>
+        <font size='50'> <br></font>
         </td>
       <td valign=top id = "third_thursday">
-        <font size='50'>13 <br></font>
+        <font size='50'> <br></font>
         </td>
       <td valign=top id = "third_friday">
-        <font size='50'>14 <br></font>
+        <font size='50'> <br></font>
         </td>
       <td valign=top id = "third_saturday">
-        <font size='50'>15 <br></font>
+        <font size='50'> <br></font>
         </td>
-      </tr><tr>
+      </tr>
+      <tr data-name="week-four">
         <td valign=top id = "fourth_sunday">
-          <font size='50'>16<br></font>
+          <font size='50'><br></font>
         </td>
         <td valign=top id = "fourth_monday">
-          <font size='50'>17 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fourth_tuesday">
-          <font size='50'>18 <br></font>
+          <font size='50'><br></font>
         </td>
         <td valign=top id = "fourth_wednesday">
-          <font size='50'>19 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fourth_thursday">
-          <font size='50'>20 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fourth_friday">
-          <font size='50'>21 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fourth_saturday">
-          <font size='50'>22 <br></font>
+          <font size='50'> <br></font>
         </td>
-      </tr><tr>
+      </tr>
+      <tr data-name="week-five">
         <td valign=top id = "fifth_sunday">
-          <font size='50'>23 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fifth_monday">
-          <font size='50'>24 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fifth_tuesday">
-          <font size='50'>25 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fifth_wednesday">
-          <font size='50'>26 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fifth_thursday">
-          <font size='50'>27 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fifth_friday">
-          <font size='50'>28 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "fifth_saturday">
-          <font size='50'>29 <br></font>
+          <font size='50'> <br></font>
         </td>
       </tr>
-      <tr>
+      <tr data-name="week-six">
         <td valign=top id = "sixth_sunday">
-          <font size='50'>30 <br></font>
+          <font size='50'> <br></font>
         </td>
         <td valign=top id = "sixth_monday">
+            <font size='50'> <br></font>
         </td>
         <td valign=top id = "sixth_tuesday">
+            <font size='50'> <br></font>
         </td>
         <td valign=top id = "sixth_wednesday">
+            <font size='50'> <br></font>
         </td>
         <td valign=top id = "sixth_thursday">
+            <font size='50'> <br></font>
         </td>
         <td valign=top id = "sixth_friday">
+            <font size='50'> <br></font>
         </td>
         <td valign=top id = "sixth_saturday">
+            <font size='50'> <br></font>
         </td>
       </tr>
+    </table>
       </table>
     </td>
   </tr>
