@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //  OpOrd
   getDates();
   listenForMonthMovement();
+  clickedOnDay();
 
 // calendar set up
   function getDates(){
@@ -158,12 +159,22 @@ document.addEventListener('DOMContentLoaded', () => {
       let day = new Date(firstDay)
       let dayOfMonth = day.getDate();
       let dayOfWeek = day.getDay();
-      let month = day.getMonth();
-      let year = day.getFullYear();
       const sundayOfday = (dayOfMonth - dayOfWeek)
-        console.log(sundayOfday)
     
       findWeekofSunday(sundayOfday, 1)
   }
 
+  // from calendar to day table
+
+  function clickedOnDay(){
+    let weekCollection = calendarTable[0].children[0].children
+    Array.from(weekCollection).forEach(function(childTrs){
+      childTrs.addEventListener("click", moveToDay)
+    })
+  }
+
+  function moveToDay(e){
+    let daySquare = e.target    
+    console.log(daySquare.innerText)
+  }
 })
