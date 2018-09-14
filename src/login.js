@@ -1,23 +1,40 @@
+document.addEventListener("DOMContentLoaded", function(event) {
 
-var attempt = 3; // Variable to count number of attempts.
-// Below function Executes on click of login button.
-function validate(){
-  var username = document.getElementById("email").value;
-  var password = document.getElementById("password").value;
-    if ( username == "Formget" && password == "formget#123"){
-      alert ("Login successfully");
-      window.location = "index.html"; // Redirecting to other page.
-      return false;
-      }
-      else{
-        attempt --;// Decrementing by one.
-        alert("You have left "+attempt+" attempt;");
-        // Disabling fields after 3 attempts.
-        if( attempt == 0){
-          document.getElementById("username").disabled = true;
-          document.getElementById("password").disabled = true;
-          document.getElementById("submit").disabled = true;
-          return false;
-    }
-  }
+const userUrl = 'http://localhost:3000/api/v1/users'
+const loginButton = document.getElementById('loginId')
+loginAttempt();
+function loginAttempt() {
+  loginButton.addEventListener('click', loginUser)
 }
+
+
+function getUsers(){
+  fetch(userUrl)
+  .then (res => res.json())
+  .then (checkUser)
+  // .then (function(e) {console.log(e)})
+}
+
+function loginUser(e){
+  e.preventDefault()
+  getUsers()
+  }
+
+  function checkUser(event){
+    let typedEmail  = document.getElementById("email").value;
+    event.forEach(function(user) {
+      check(user, typedEmail) 
+
+    })
+    }
+
+  function check(user, typedEmail) {
+    if ( typedEmail === user.email) {
+      alert ("Login successfully");
+      window.location = "index.html"; // Redirecting to
+    } else {
+
+
+    }
+}
+})

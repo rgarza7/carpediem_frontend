@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const userUrl = 'http://localhost:3000/api/v1/users'
   const eventsUrl = 'http://localhost:3000/api/v1/events'
   const datesUrl = 'http://localhost:3000/api/v1/calendar_dates'
-  const eventDatesUrl = 'http://localhost:3000/api/v1/event_dates' 
+  const eventDatesUrl = 'http://localhost:3000/api/v1/event_dates'
 
 // Global set elements
   const fullCalendarTable = document.getElementById("calendar-table")
@@ -15,13 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const monthForwardButton = document.getElementById("calendar_right")
   const monthBackButton = document.getElementById("calendar_left")
   const todayButton = document.getElementById("calendar_today_button")
+  const logOutButton = document.getElementById("logout_button")
 
 // Global set objects
-  const months = {0:"January", 1:"Febuary", 2:"March", 3:"April", 4:"May", 5:"June", 6:"July", 7:"August", 8:"September", 9:"October", 10:"November", 11:"December"}  
+  const months = {0:"January", 1:"Febuary", 2:"March", 3:"April", 4:"May", 5:"June", 6:"July", 7:"August", 8:"September", 9:"October", 10:"November", 11:"December"}
   const monthDays = {"January":31, "Febuary":febuary, "March":31, "April":30, "May":31, "June":30, "July":31, "August":31, "September":30, "October":31, "November":30, "December":31}
 
   function febuary(year = currentYear.innerText){
-  
+
     if ((year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)) {
         return 29
     } else {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch (datesUrl)
     .then (res => res.json())
     .then (populateCalendar)
-    
+
   }
 
   function populateCalendar(e){
@@ -66,20 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
       setYear(year)
       findWeekofSunday(firstCalendarSunday, 1)
     })
-   
+
   }
 
   function setMonth(month){
     currentMonth.innerText = months[month]
   }
-  
+
   function setYear(year){
     currentYear.innerText = year
   }
 
   function findWeekofSunday(sundayOfday, i){
     const weekOnCalendar = {1:1, 8:2, 15:3, 22:4, 29:5};
-    
+
    if (sundayOfday <= 1){
       putNumbersOnCaldar(0, sundayOfday, 0)
     } else if (sundayOfday > i && sundayOfday < (i + 8)){
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function daysInMonth(){
     return monthDays[currentMonth.innerText]
   }
-    
+
   // delegate
 
   function listenForMonthMovement(){
@@ -174,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let dayOfMonth = day.getDate();
       let dayOfWeek = day.getDay();
       const sundayOfday = (dayOfMonth - dayOfWeek)
-    
+
       findWeekofSunday(sundayOfday, 1)
   }
 // today button
@@ -182,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault
     let today = new Date(Date.now()).getDate()
     goToDay(today)
-    // get month find days 
-    
-   
+    // get month find days
+
+
   }
 
 
@@ -199,14 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function moveToDay(e){
     e.preventDefault()
-    let daySquare = e.target    
+    let daySquare = e.target
     let day = daySquare.innerText
     goToDay(day);
   }
 
   function goToDay(day){
     const dayTableDay = document.getElementById("day_table_day")
-    const dayTableMonth = document.getElementById("day_table_month") 
+    const dayTableMonth = document.getElementById("day_table_month")
     let month = currentMonth.innerText
     dayTableDay.innerText = day
     dayTableMonth.innerText = month
@@ -228,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // thanks Hogku
 function fadeOut(el) {
   el.classList = "fade-up-out"
-  
+
   setTimeout(() => {
     el.style.opacity = 0
     el.classList.remove("fade-up-out")
@@ -244,7 +245,7 @@ function fadeIn(el) {
     el.style.opacity = 100
     el.classList.remove("fade-down-in")
     el.style.display.remove
-    
+
   }, 100)
 }
 
@@ -261,7 +262,7 @@ function delayedFadeIn(div, range, min=0) {
 }
 
 function fadeAllOut(group) {
- 
+
       delayedFadeOut(group, 10, 1)
 }
 
