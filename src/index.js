@@ -6,16 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const eventDatesUrl = 'http://localhost:3000/api/v1/event_dates' 
 
 // Global set elements
+  const fullCalendarTable = document.getElementById("calendar-table")
   const calendarTable = document.querySelectorAll("[data-id='1']")
+  const todayTable = document.getElementsByClassName("container-table")
   const currentYear = document.getElementById("calendar_year")
   const currentMonth = document.getElementById("calendar_month")
   const navBar = document.getElementById("nav-bar")
   const monthForwardButton = document.getElementById("calendar_right")
   const monthBackButton = document.getElementById("calendar_left")
+  const todayButton = document.getElementById("calendar_today_button")
 
 // Global set objects
   const months = {0:"January", 1:"Febuary", 2:"March", 3:"April", 4:"May", 5:"June", 6:"July", 7:"August", 8:"September", 9:"October", 10:"November", 11:"December"}  
-  const monthDays = {"January":31, "Febuary":28, "March":31, "April":30, "May":31, "June":30, "July":31, "August":31, "September":30, "October":31, "November":30, "December":31}
+  const monthDays = {"January":31, "Febuary":febuary, "March":31, "April":30, "May":31, "June":30, "July":31, "August":31, "September":30, "October":31, "November":30, "December":31}
+
+  function febuary(year = currentYear.innerText){
+  
+    if ((year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)) {
+        return 29
+    } else {
+       return 28
+    }
+  }
 
 // prototype for global objects
   Object.prototype.getKeyByValue = function( value ) {
@@ -110,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     monthBackButton.addEventListener("mouseover", backHover)
     monthForwardButton.addEventListener("click", monthForward)
     monthBackButton.addEventListener("click", monthBack)
+    todayButton.addEventListener("click", jumpToToday)
+
   }
   function forwardHover(e){
     e.preventDefault()
@@ -163,18 +177,104 @@ document.addEventListener('DOMContentLoaded', () => {
     
       findWeekofSunday(sundayOfday, 1)
   }
+// today button
+  function jumpToToday(e){
+    e.preventDefault
+    let today = new Date(Date.now()).getDate()
+    goToDay(today)
+    // get month find days 
+    
+   
+  }
+
 
   // from calendar to day table
 
   function clickedOnDay(){
     let weekCollection = calendarTable[0].children[0].children
-    Array.from(weekCollection).forEach(function(childTrs){
-      childTrs.addEventListener("click", moveToDay)
+    Array.from(weekCollection).forEach(function(childTr){
+      childTr.addEventListener("click", moveToDay)
     })
   }
 
   function moveToDay(e){
+    e.preventDefault()
     let daySquare = e.target    
-    console.log(daySquare.innerText)
+    let day = daySquare.innerText
+    goToDay(day);
   }
+
+  function goToDay(day){
+    const dayTableDay = document.getElementById("day_table_day")
+    const dayTableMonth = document.getElementById("day_table_month") 
+    let month = currentMonth.innerText
+    dayTableDay.innerText = day
+    dayTableMonth.innerText = month
+    transitionPage(fullCalendarTable, todayTable[0])
+    getEvents()
+  }
+
+  function getEvents(){
+    fetch(userUrl)
+    .then (res => res.json())
+    .then (populateEvents)
+  }
+
+  function populateEvents(e){
+   console.log(e)
+  }
+
+
+// thanks Hogku
+function fadeOut(el) {
+  el.classList = "fade-up-out"
+  
+  setTimeout(() => {
+    el.style.opacity = 0
+    el.classList.remove("fade-up-out")
+    el.style.display = "none"
+  }, 100)
+  // debugger
+}
+
+function fadeIn(el) {
+  el.classList = "fade-down-in"
+  setTimeout(() => {
+    el.style.opacity.remove
+    el.style.opacity = 100
+    el.classList.remove("fade-down-in")
+    el.style.display.remove
+    
+  }, 100)
+}
+
+function delayedFadeOut(div, range, min=0) {
+  setTimeout(() => {
+    fadeOut(div)
+  }, Math.random() * range + min)
+}
+
+function delayedFadeIn(div, range, min=0) {
+  setTimeout(() => {
+    fadeIn(div)
+  }, Math.random() * range + min)
+}
+
+function fadeAllOut(group) {
+ 
+      delayedFadeOut(group, 10, 1)
+}
+
+function fadeAllIn(group) {
+    delayedFadeIn(group, 10, 1)
+
+}
+
+function transitionPage(groupOut, groupIn){
+  fadeAllOut(groupOut)
+  setTimeout(() => {
+    fadeAllIn(groupIn)
+  }, 15)
+}
+
 })
